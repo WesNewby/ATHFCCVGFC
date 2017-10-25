@@ -8,6 +8,8 @@ var projectile = preload("res://Scenes/Projectile.xml")
 var pressed = false
 var lastMoveTime
 var startTime
+var start_pos
+signal door
 
 func _ready():
 	set_name("Player")
@@ -15,6 +17,7 @@ func _ready():
 	RayNode=get_node("RayCast2D")
 	startTime= OS.get_unix_time()
 	lastMoveTime = 0
+	start_pos = get_global_pos()
 
 func _fixed_process(delta):
 
@@ -28,6 +31,15 @@ func _fixed_process(delta):
 			pressed = false
 			"""
 	else:
+		if(is_colliding()):
+			var collider = get_collider()
+			if (collider.is_in_group("enemies")) :
+				set_global_pos(start_pos)
+			elif (collider.is_in_group("doors")) :
+				print("look")
+				var x =get_tree().get_root().find_node(collider.getNextNodeName(), true, false)
+				
+				set_global_pos(x.getPos())
 		#motion
 		var motion = Vector2()
 		if(Input.is_action_pressed("ui_up")):
@@ -74,9 +86,9 @@ func getAnimationID():
 		return 2
 	return 0;
 
-func interact(object):
-	
-	pass
+func hitByEnemy():
+	set_global_pos(start_pos)
+
 
 func changeHealth(value) : #adds the value (positive or negative) to player health. kills player if result <0
 	HEALTH+=value
@@ -98,4 +110,5 @@ func changeHealth(value) : #adds the value (positive or negative) to player heal
 
 func die() :
 	pass
+	#death
 

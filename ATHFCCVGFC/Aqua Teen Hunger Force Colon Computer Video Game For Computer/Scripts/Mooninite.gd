@@ -12,6 +12,7 @@ var collision
 
 
 func _ready():
+	add_to_group("enemies")
 	set_fixed_process(true)
 	scale(SCALE)
 	RayNode=get_node("RayCast2D")
@@ -37,9 +38,13 @@ func _fixed_process(delta):
 	var motion = Vector2()
 
 	if(is_colliding()):
-		#print(get_collider())
-		reverse_on_collision()
-		move_func(motion, delta)
+		var collider = get_collider()
+		if (collider.get_name()=="Player") :
+			collider.hitByEnemy()
+			move_func(motion, delta)
+		else:
+			reverse_on_collision()
+			move_func(motion, delta)
 	else :
 		move_func(motion, delta)
 
