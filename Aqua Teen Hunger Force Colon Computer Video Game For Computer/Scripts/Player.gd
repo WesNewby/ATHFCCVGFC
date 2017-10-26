@@ -40,6 +40,9 @@ func _fixed_process(delta):
 				var x =get_tree().get_root().find_node(collider.getNextNodeName(), true, false)
 				
 				set_global_pos(x.getPos())
+			elif (collider.is_in_group("flag")) :
+				#set flag sprite up
+				pass
 		#motion
 		var motion = Vector2()
 		if(Input.is_action_pressed("ui_up")):

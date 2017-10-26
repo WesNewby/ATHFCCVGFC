@@ -6,7 +6,7 @@ var pos = get_global_pos()
 
 func _ready():
 	set_name("door"+str(DOOR_ID))
-	add_to_group("enemies")
+	add_to_group("doors")
 
 
 
