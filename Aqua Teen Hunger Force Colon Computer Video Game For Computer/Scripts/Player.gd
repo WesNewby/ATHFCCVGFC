@@ -20,6 +20,7 @@ func _ready():
 	lastMoveTime = 0
 	start_pos = get_global_pos()
 	
+	
 
 func _fixed_process(delta):
 

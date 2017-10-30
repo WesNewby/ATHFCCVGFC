@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="27" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+<resource_file type="PackedScene" subresource_count="28" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://Scripts/Player.gd" type="Script" index="0"></ext_resource>
 	<ext_resource path="res://Scripts/PlayerAnimation.gd" type="Script" index="5"></ext_resource>
 	<ext_resource path="res://Sprites/Balloon1.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://Sprites/Balloon2.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Sprites/Balloon4.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Sprites/Balloon3.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://Sounds/death2.wav" type="Sample" index="19"></ext_resource>
-	<ext_resource path="res://Sounds/DyingCell.wav" type="Sample" index="8"></ext_resource>
-	<ext_resource path="res://Sounds/Death.wav" type="Sample" index="7"></ext_resource>
-	<ext_resource path="res://Sounds/Exp.wav" type="Sample" index="9"></ext_resource>
-	<ext_resource path="res://Sounds/Mystic.wav" type="Sample" index="13"></ext_resource>
-	<ext_resource path="res://Sounds/Success.wav" type="Sample" index="15"></ext_resource>
-	<ext_resource path="res://Sounds/weird1.wav" type="Sample" index="22"></ext_resource>
-	<ext_resource path="res://Sounds/Upgrade.wav" type="Sample" index="16"></ext_resource>
-	<ext_resource path="res://Sounds/Lose.wav" type="Sample" index="12"></ext_resource>
-	<ext_resource path="res://Sounds/Win.wav" type="Sample" index="18"></ext_resource>
-	<ext_resource path="res://Sounds/song1.wav" type="Sample" index="21"></ext_resource>
-	<ext_resource path="res://Sounds/Upgrading.wav" type="Sample" index="17"></ext_resource>
-	<ext_resource path="res://Sounds/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE.wav" type="Sample" index="14"></ext_resource>
-	<ext_resource path="res://Sounds/CoinSound.wav" type="Sample" index="6"></ext_resource>
-	<ext_resource path="res://Sounds/exp2.wav" type="Sample" index="20"></ext_resource>
-	<ext_resource path="res://Sounds/LevelUp.wav" type="Sample" index="11"></ext_resource>
-	<ext_resource path="res://Sounds/LavaFall.wav" type="Sample" index="10"></ext_resource>
+	<ext_resource path="res://Sounds/death2.wav" type="Sample" index="20"></ext_resource>
+	<ext_resource path="res://Sounds/DyingCell.wav" type="Sample" index="9"></ext_resource>
+	<ext_resource path="res://Sounds/Death.wav" type="Sample" index="8"></ext_resource>
+	<ext_resource path="res://Sounds/Exp.wav" type="Sample" index="10"></ext_resource>
+	<ext_resource path="res://Sounds/Mystic.wav" type="Sample" index="14"></ext_resource>
+	<ext_resource path="res://Sounds/Success.wav" type="Sample" index="16"></ext_resource>
+	<ext_resource path="res://Sounds/weird1.wav" type="Sample" index="23"></ext_resource>
+	<ext_resource path="res://Sounds/Upgrade.wav" type="Sample" index="17"></ext_resource>
+	<ext_resource path="res://Sounds/Lose.wav" type="Sample" index="13"></ext_resource>
+	<ext_resource path="res://Sounds/Win.wav" type="Sample" index="19"></ext_resource>
+	<ext_resource path="res://Sounds/song1.wav" type="Sample" index="22"></ext_resource>
+	<ext_resource path="res://Sounds/Upgrading.wav" type="Sample" index="18"></ext_resource>
+	<ext_resource path="res://Sounds/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE.wav" type="Sample" index="15"></ext_resource>
+	<ext_resource path="res://Sounds/CoinSound.wav" type="Sample" index="7"></ext_resource>
+	<ext_resource path="res://Sounds/exp2.wav" type="Sample" index="21"></ext_resource>
+	<ext_resource path="res://Sounds/LevelUp.wav" type="Sample" index="12"></ext_resource>
+	<ext_resource path="res://Sounds/LavaFall.wav" type="Sample" index="11"></ext_resource>
+	<ext_resource path="res://Sounds/Algae Bloom In Seven_Tipper.wav" type="Sample" index="6"></ext_resource>
 	<resource type="CapsuleShape2D" path="local://3">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
@@ -61,7 +62,7 @@
 
 	</resource>
 	<resource type="SampleLibrary" path="local://4">
-		<dictionary name="samples/CoinSound" shared="false">
+		<dictionary name="samples/Algae Bloom In Seven_Tipper" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -71,7 +72,7 @@
 			<string> "sample" </string>
 			<resource  external="6">  </resource>
 		</dictionary>
-		<dictionary name="samples/Death" shared="false">
+		<dictionary name="samples/CoinSound" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -81,7 +82,7 @@
 			<string> "sample" </string>
 			<resource  external="7">  </resource>
 		</dictionary>
-		<dictionary name="samples/DyingCell" shared="false">
+		<dictionary name="samples/Death" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -91,7 +92,7 @@
 			<string> "sample" </string>
 			<resource  external="8">  </resource>
 		</dictionary>
-		<dictionary name="samples/Exp" shared="false">
+		<dictionary name="samples/DyingCell" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -101,7 +102,7 @@
 			<string> "sample" </string>
 			<resource  external="9">  </resource>
 		</dictionary>
-		<dictionary name="samples/LavaFall" shared="false">
+		<dictionary name="samples/Exp" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -111,7 +112,7 @@
 			<string> "sample" </string>
 			<resource  external="10">  </resource>
 		</dictionary>
-		<dictionary name="samples/LevelUp" shared="false">
+		<dictionary name="samples/LavaFall" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -121,7 +122,7 @@
 			<string> "sample" </string>
 			<resource  external="11">  </resource>
 		</dictionary>
-		<dictionary name="samples/Lose" shared="false">
+		<dictionary name="samples/LevelUp" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -131,7 +132,7 @@
 			<string> "sample" </string>
 			<resource  external="12">  </resource>
 		</dictionary>
-		<dictionary name="samples/Mystic" shared="false">
+		<dictionary name="samples/Lose" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -141,7 +142,7 @@
 			<string> "sample" </string>
 			<resource  external="13">  </resource>
 		</dictionary>
-		<dictionary name="samples/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE" shared="false">
+		<dictionary name="samples/Mystic" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -151,7 +152,7 @@
 			<string> "sample" </string>
 			<resource  external="14">  </resource>
 		</dictionary>
-		<dictionary name="samples/Success" shared="false">
+		<dictionary name="samples/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -161,7 +162,7 @@
 			<string> "sample" </string>
 			<resource  external="15">  </resource>
 		</dictionary>
-		<dictionary name="samples/Upgrade" shared="false">
+		<dictionary name="samples/Success" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -171,7 +172,7 @@
 			<string> "sample" </string>
 			<resource  external="16">  </resource>
 		</dictionary>
-		<dictionary name="samples/Upgrading" shared="false">
+		<dictionary name="samples/Upgrade" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -181,7 +182,7 @@
 			<string> "sample" </string>
 			<resource  external="17">  </resource>
 		</dictionary>
-		<dictionary name="samples/Win" shared="false">
+		<dictionary name="samples/Upgrading" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -191,7 +192,7 @@
 			<string> "sample" </string>
 			<resource  external="18">  </resource>
 		</dictionary>
-		<dictionary name="samples/death2" shared="false">
+		<dictionary name="samples/Win" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -201,7 +202,7 @@
 			<string> "sample" </string>
 			<resource  external="19">  </resource>
 		</dictionary>
-		<dictionary name="samples/exp2" shared="false">
+		<dictionary name="samples/death2" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -211,7 +212,7 @@
 			<string> "sample" </string>
 			<resource  external="20">  </resource>
 		</dictionary>
-		<dictionary name="samples/song1" shared="false">
+		<dictionary name="samples/exp2" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -221,7 +222,7 @@
 			<string> "sample" </string>
 			<resource  external="21">  </resource>
 		</dictionary>
-		<dictionary name="samples/weird1" shared="false">
+		<dictionary name="samples/song1" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
@@ -230,6 +231,16 @@
 			<int> 0 </int>
 			<string> "sample" </string>
 			<resource  external="22">  </resource>
+		</dictionary>
+		<dictionary name="samples/weird1" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="23">  </resource>
 		</dictionary>
 
 	</resource>
