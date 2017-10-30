@@ -45,7 +45,7 @@ func _fixed_process(delta):
 				set_global_pos(x.getPos())
 			elif (collider.is_in_group("checkpoints")) :
 				collider.set_texture()
-				get_node("sounds").play("LevelUp")
+				
 				set_start_pos(collider.get_global_pos())
 			elif (collider.is_in_group("Xavier")) :
 				get_node("sounds").play("Mystic")

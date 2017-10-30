@@ -17,6 +17,7 @@ func set_texture():
 	if(down) :
 		var sprite = get_node("Sprite")
 		sprite.set_texture(load("res://Sprites/upflag.png.png"))
+		get_node("sounds").play("LevelUp")
 		down = false
 
 func get_position():
