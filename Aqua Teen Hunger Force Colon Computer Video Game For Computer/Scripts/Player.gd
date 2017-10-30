@@ -8,16 +8,18 @@ var projectile = preload("res://Scenes/Projectile.xml")
 var pressed = false
 var lastMoveTime
 var startTime
-var start_pos
+export var start_pos = 0
 signal door
 
 func _ready():
+	add_to_group("Player")
 	set_name("Player")
 	set_fixed_process(true)
 	RayNode=get_node("RayCast2D")
 	startTime= OS.get_unix_time()
 	lastMoveTime = 0
 	start_pos = get_global_pos()
+	
 
 func _fixed_process(delta):
 
@@ -34,15 +36,19 @@ func _fixed_process(delta):
 		if(is_colliding()):
 			var collider = get_collider()
 			if (collider.is_in_group("enemies")) :
+				get_node("sounds").play("POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE")
 				set_global_pos(start_pos)
 			elif (collider.is_in_group("doors")) :
 				print("look")
 				var x =get_tree().get_root().find_node(collider.getNextNodeName(), true, false)
-				
 				set_global_pos(x.getPos())
-			elif (collider.is_in_group("flag")) :
-				#set flag sprite up
-				pass
+			elif (collider.is_in_group("checkpoints")) :
+				collider.set_texture()
+				get_node("sounds").play("LevelUp")
+				set_start_pos(collider.get_global_pos())
+			elif (collider.is_in_group("Xavier")) :
+				get_node("sounds").play("Mystic")
+				get_tree().change_scene("res://Scenes/EndGame.xml")
 		#motion
 		var motion = Vector2()
 		if(Input.is_action_pressed("ui_up")):
@@ -114,4 +120,7 @@ func changeHealth(value) : #adds the value (positive or negative) to player heal
 func die() :
 	pass
 	#death
+
+func set_start_pos(position):
+	start_pos=position
 

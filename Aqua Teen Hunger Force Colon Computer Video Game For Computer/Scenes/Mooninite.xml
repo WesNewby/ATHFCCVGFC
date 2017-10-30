@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="4" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+<resource_file type="PackedScene" subresource_count="9" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://Scripts/Mooninite.gd" type="Script" index="0"></ext_resource>
-	<ext_resource path="res://Sprites/Mooninite.png" type="Texture" index="1"></ext_resource>
-	<resource type="RectangleShape2D" path="local://1">
+	<ext_resource path="res://Scripts/KnifeAnimation.gd" type="Script" index="3"></ext_resource>
+	<ext_resource path="res://Sprites/knife1.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Sprites/knife2.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Sounds/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE.wav" type="Sample" index="4"></ext_resource>
+	<resource type="RectangleShape2D" path="local://3">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 64, 64 </vector2>
+		<vector2 name="extents"> 10, 8.58267 </vector2>
+
+	</resource>
+	<resource type="SpriteFrames" path="local://2">
+		<array name="animations" len="1" shared="false">
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="2" shared="false">
+					<resource  external="1">  </resource>
+					<resource  external="2">  </resource>
+				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
+				<string> "default" </string>
+				<string> "speed" </string>
+				<real> 5 </real>
+			</dictionary>
+		</array>
+
+	</resource>
+	<resource type="SampleLibrary" path="local://4">
+		<dictionary name="samples/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "priority" </string>
+			<int> 0 </int>
+			<string> "sample" </string>
+			<resource  external="4">  </resource>
+		</dictionary>
 
 	</resource>
 	<main_resource>
@@ -17,7 +51,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="29">
+			<string_array  len="40">
 				<string> "Mooninite" </string>
 				<string> "transform/pos" </string>
 				<string> "transform/scale" </string>
@@ -45,33 +79,54 @@
 				<string> "cast_to" </string>
 				<string> "layer_mask" </string>
 				<string> "type_mask" </string>
-				<string> "Sprite" </string>
-				<string> "texture" </string>
+				<string> "AnimatedSprite" </string>
+				<string> "frames" </string>
+				<string> "animation" </string>
+				<string> "sounds" </string>
+				<string> "params/volume_db" </string>
+				<string> "params/pitch_scale" </string>
+				<string> "params/attenuation/min_distance" </string>
+				<string> "params/attenuation/max_distance" </string>
+				<string> "params/attenuation/distance_exp" </string>
+				<string> "config/polyphony" </string>
+				<string> "config/samples" </string>
+				<string> "config/pitch_random" </string>
+				<string> "SamplePlayer2D" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 5 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="76"> 				-1, -1, 17, 0, -1, 16, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 2, 7, 5, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 8, 15, 2, 16, 2, 0, 0, 0, 18, 18, -1, 3, 19, 3, 20, 2, 21, 11, 0, 0, 0, 22, 22, -1, 4, 23, 2, 24, 12, 25, 5, 26, 13, 0, 0, 0, 27, 27, -1, 1, 28, 14, 0 </int_array>
+			<int_array  len="111"> 				-1, -1, 17, 0, -1, 16, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 2, 7, 5, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 8, 15, 2, 16, 2, 0, 0, 0, 18, 18, -1, 5, 1, 11, 2, 12, 19, 3, 20, 2, 21, 13, 0, 0, 0, 22, 22, -1, 4, 23, 2, 24, 14, 25, 5, 26, 15, 0, 0, 0, 27, 27, -1, 5, 1, 16, 2, 17, 28, 18, 29, 19, 10, 20, 0, 0, 0, 39, 30, -1, 8, 31, 21, 32, 22, 33, 22, 34, 23, 35, 22, 36, 5, 37, 24, 38, 21, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="15" shared="false">
+			<array  len="25" shared="false">
 				<vector2> 0, 16 </vector2>
 				<vector2> 0.125, 0.125 </vector2>
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
+				<resource  resource_type="Shape2D" path="local://3">  </resource>
+				<matrix32> 2.87694, -0, 0, 7.54856, 1.65016, 20.0023 </matrix32>
 				<int> 1 </int>
 				<real> 0.08 </real>
 				<resource  external="0">  </resource>
 				<int> 100 </int>
 				<string> "down" </string>
 				<vector2> 1, 1 </vector2>
+				<vector2> 1.65016, 20.0023 </vector2>
+				<vector2> 2.87694, 7.54856 </vector2>
 				<int> 0 </int>
 				<vector2> 0, 50 </vector2>
 				<int> 15 </int>
-				<resource  external="1">  </resource>
+				<vector2> -1.10749, -2.79646 </vector2>
+				<vector2> 5.60783, 5.65546 </vector2>
+				<resource  resource_type="SpriteFrames" path="local://2">  </resource>
+				<string> "default" </string>
+				<resource  external="3">  </resource>
+				<real> 0 </real>
+				<real> 1 </real>
+				<real> 2048 </real>
+				<resource  resource_type="SampleLibrary" path="local://4">  </resource>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>

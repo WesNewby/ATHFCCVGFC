@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var MOTION_SPEED = 100
-export var DIRECTION = "down"
+export var DIRECTION = "left"
 export var SCALE =Vector2(1,1)
 export var HEALTH = 100
 export var FRIEND = false #if true, does not damage player and can be interacted with
@@ -12,7 +12,7 @@ var collision
 
 
 func _ready():
-	add_to_group("enemies")
+	add_to_group("Xavier")
 	set_fixed_process(true)
 	scale(SCALE)
 	RayNode=get_node("RayCast2D")
@@ -40,9 +40,7 @@ func _fixed_process(delta):
 	if(is_colliding()):
 		var collider = get_collider()
 		if (collider.get_name()=="Player") :
-			get_node("sounds").play("POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE")
-			collider.hitByEnemy()
-			move_func(motion, delta)
+			pass
 		else:
 			reverse_on_collision()
 			move_func(motion, delta)
