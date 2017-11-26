@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="9" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
-	<ext_resource path="res://Scripts/Mooninite.gd" type="Script" index="0"></ext_resource>
-	<ext_resource path="res://Scripts/KnifeAnimation.gd" type="Script" index="3"></ext_resource>
-	<ext_resource path="res://Sprites/knife1.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Sprites/knife2.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://Sounds/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE.wav" type="Sample" index="4"></ext_resource>
-	<resource type="RectangleShape2D" path="local://3">
+<resource_file type="PackedScene" subresource_count="4" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+	<ext_resource path="res://Sprites/Mooninite.png" type="Texture" index="0"></ext_resource>
+	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 10, 8.58267 </vector2>
+		<vector2 name="extents"> 10, 10 </vector2>
 
 	</resource>
-	<resource type="SpriteFrames" path="local://2">
-		<array name="animations" len="1" shared="false">
-			<dictionary  shared="false">
-				<string> "frames" </string>
-				<array  len="2" shared="false">
-					<resource  external="1">  </resource>
-					<resource  external="2">  </resource>
-				</array>
-				<string> "loop" </string>
-				<bool> True </bool>
-				<string> "name" </string>
-				<string> "default" </string>
-				<string> "speed" </string>
-				<real> 5 </real>
-			</dictionary>
-		</array>
-
-	</resource>
-	<resource type="SampleLibrary" path="local://4">
-		<dictionary name="samples/POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "priority" </string>
-			<int> 0 </int>
-			<string> "sample" </string>
-			<resource  external="4">  </resource>
-		</dictionary>
+	<resource type="GDScript" path="local://2">
+		<string name="script/source"> "extends KinematicBody2D&#000a;&#000a;export var MOTION_SPEED = 0&#000a;export var DIRECTION = &quot;left&quot;&#000a;export var SCALE =Vector2(1,1)&#000a;#export var HEALTH = 100&#000a;export var WORDS = [&quot;My nutrients! Retrieve them at once, they have escaped!&quot;]&#000a;export var WORDS1 = [&quot;if you want to achieve in this life, you must set your goals higher.&quot;, &quot; &quot;, &quot;The needs of the many outweigh the needs of the one. And if you think I got that from Star Trek, you are very wrong, mister. &quot;, &quot; &quot;, &quot;First we must train you. You can&apos;t go into battle like that. Do you want it done fast, Err, or do you want it done right? &quot;, &quot; &quot;, &quot;Now clutch the dark purple hairs of the galloping orangutan of normalcy and ride! ride!&quot;, &quot;Huh, impressive. You have a fresh approach to being normal&quot;]&#000a;export var PLAYER_RESPONSE = [&quot; &quot;,&quot;That&apos;s it! I give up! I sacrificed everything - even your lives - for you people, and what do I get?!&quot;, &quot; &quot;, &quot;I&apos;ll just fit in. Take on a normal life! Meet a nice job; hold down a well paying family!&quot;, &quot; &quot;, &quot;I just want it done! done! done!&quot;, &quot; &quot;]&#000a;export var PLAYER_RESPONSE_SHORT = [&quot; &quot;, &quot;I alone stride along to strive alone to unify all men in the greasy heat of my unifrier. &quot; ]&#000a;export var ACTIVE = false&#000a;export var dialog_time = 3.5&#000a;export var GROUP = &quot;mooninites&quot;&#000a;export var HAS_KEY = false&#000a;&#000a;var dialog_array &#000a;var timeLeft&#000a;var showing_dialog=false&#000a;var RayNode&#000a;var collision &#000a;var dialog_bool = false&#000a;onready var dialog = get_node(&quot;Dialog&quot;)&#000a;var dialog_iterator = 0&#000a;&#000a;func _ready():&#000a;&#0009;add_to_group(GROUP)&#000a;&#0009;timeLeft = dialog_time&#000a;&#0009;dialog_array = WORDS&#000a;&#0009;set_fixed_process(true)&#000a;&#0009;scale(SCALE)&#000a;&#0009;RayNode=get_node(&quot;RayCast2D&quot;)&#000a;&#0009;if(DIRECTION==&quot;down&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(0)&#000a;&#0009;elif(DIRECTION==&quot;up&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(180)&#000a;&#0009;elif(DIRECTION==&quot;left&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(-90)&#000a;&#0009;elif(DIRECTION==&quot;right&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(90)&#000a;&#0009;elif(DIRECTION==&quot;up-right&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(135)&#000a;&#0009;elif(DIRECTION==&quot;up-left&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(-135)&#000a;&#0009;elif(DIRECTION==&quot;down-right&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(45)&#000a;&#0009;elif(DIRECTION==&quot;down-left&quot;):&#000a;&#0009;&#0009;RayNode.set_rotd(-45)&#000a;&#0009;collision = false&#000a;&#000a;func _fixed_process(delta):&#000a;&#0009;if(showing_dialog):&#000a;&#0009;&#0009;timeLeft-=delta&#000a;&#0009;&#0009;if(timeLeft&lt;0):&#000a;&#0009;&#0009;&#0009;interate_dialog()&#000a;&#0009;&#000a;&#0009;var motion = Vector2()&#000a;&#0009;if(is_colliding()):&#000a;&#0009;&#0009;var collider = get_collider()&#000a;&#0009;&#0009;if (collider.get_name()==&quot;Player&quot;&amp;&amp;ACTIVE==true) :&#000a;&#0009;&#0009;&#0009;get_node(&quot;sounds&quot;).play(&quot;POP SOUND EFFECT FREE NO COPYRIGHTS ROYALTY FREE&quot;)&#000a;&#0009;&#0009;&#0009;collider.hitByEnemy()&#000a;&#0009;&#0009;&#0009;#collider.set_popped(true)&#000a;&#0009;&#0009;&#0009;move_func(motion, delta)&#000a;&#0009;&#0009;else:&#000a;&#0009;&#0009;&#0009;var x = 0&#000a;&#0009;&#0009;&#0009;if(HAS_KEY&amp;&amp;collider.get_name()==&quot;Player&quot;):&#000a;&#0009;&#0009;&#0009;&#0009;collider.set_key(has_key())&#000a;&#0009;&#0009;&#0009;&#0009;collider.set_dialog_bool(true)&#000a;&#0009;&#0009;&#0009;&#0009;x = 1&#000a;&#0009;&#0009;&#0009;&#0009;collider.set_response(1, PLAYER_RESPONSE)&#000a;&#0009;&#0009;&#0009;if(!showing_dialog&amp;&amp;collider.get_name()==&quot;Player&quot;):&#000a;&#0009;&#0009;&#0009;&#0009;collider.activate_dialog(x)&#000a;&#0009;&#0009;&#0009;&#0009;activate_dialog(x)&#000a;&#0009;&#0009;&#0009;&#000a;&#0009;&#0009;&#0009;reverse_on_collision()&#000a;&#0009;&#0009;&#0009;move_func(motion, delta)&#000a;&#0009;else :&#000a;&#0009;&#0009;move_func(motion, delta)&#000a;&#000a;func reverse_on_collision():&#000a;&#0009;if(DIRECTION==&quot;down&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;up&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(180)&#000a;&#0009;elif(DIRECTION==&quot;up&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;down&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(0)&#000a;&#0009;elif(DIRECTION==&quot;left&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;right&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(90)&#000a;&#0009;elif(DIRECTION==&quot;right&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;left&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(-90)&#000a;&#0009;elif(DIRECTION==&quot;up-right&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;down-left&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(-45)&#000a;&#0009;elif(DIRECTION==&quot;up-left&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;down-right&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(45)&#000a;&#0009;elif(DIRECTION==&quot;down-right&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;up-left&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(-135)&#000a;&#0009;elif(DIRECTION==&quot;down-left&quot;):&#000a;&#0009;&#0009;DIRECTION=&quot;up-right&quot;&#000a;&#0009;&#0009;RayNode.set_rotd(135)&#000a;&#000a;func move_func(motion, delta):&#000a;&#0009;if(DIRECTION==&quot;down&quot;):&#000a;&#0009;&#0009;motion+=Vector2(0,1)&#000a;&#0009;elif(DIRECTION==&quot;up&quot;):&#000a;&#0009;&#0009;motion+=Vector2(0,-1)&#000a;&#0009;elif(DIRECTION==&quot;left&quot;):&#000a;&#0009;&#0009;motion+=Vector2(-1,0)&#000a;&#0009;elif(DIRECTION==&quot;right&quot;):&#000a;&#0009;&#0009;motion+=Vector2(1,0)&#000a;&#0009;if(DIRECTION==&quot;up-right&quot;):&#000a;&#0009;&#0009;motion+=Vector2(1,1)&#000a;&#0009;if(DIRECTION==&quot;up-left&quot;):&#000a;&#0009;&#0009;motion+=Vector2(1,-1)&#000a;&#0009;if(DIRECTION==&quot;down-right&quot;):&#000a;&#0009;&#0009;motion+=Vector2(-1,1)&#000a;&#0009;if(DIRECTION==&quot;down-left&quot;):&#000a;&#0009;&#0009;motion+=Vector2(-1,-1)&#000a;&#0009;&#0009;&#000a;&#0009;motion = motion.normalized()*MOTION_SPEED*delta&#000a;&#0009;move(motion)&#000a;&#000a;func get_active():&#000a;&#0009;return ACTIVE&#000a;&#000a;func get_words():&#000a;&#0009;return dialog_array&#000a;&#000a;func has_key():&#000a;&#0009;if(HAS_KEY):&#000a;&#0009;&#0009;HAS_KEY = false&#000a;&#0009;&#0009;return true&#000a;&#0009;return false&#000a;&#000a;func activate_dialog(arg):&#000a;&#0009;if(arg == 0&amp;&amp;(!showing_dialog||(showing_dialog&amp;&amp;dialog_time-timeLeft&gt;.3&amp;&amp;dialog_array==WORDS))):&#000a;&#0009;&#0009;dialog_array = WORDS&#000a;&#0009;&#0009;interate_dialog()&#000a;&#0009;if(arg == 1&amp;&amp;!showing_dialog):&#000a;&#0009;&#0009;dialog_array = WORDS1&#000a;&#0009;&#0009;interate_dialog()&#000a;&#000a;func interate_dialog():&#000a;&#0009;if(dialog_iterator&gt;=dialog_array.size()):&#000a;&#0009;&#0009;dialog.hide()&#000a;&#0009;&#0009;dialog_iterator=0&#000a;&#0009;&#0009;timeLeft=dialog_time&#000a;&#0009;&#0009;showing_dialog=false&#000a;&#0009;else:&#000a;&#0009;&#0009;dialog.set_text(dialog_array[dialog_iterator])&#000a;&#0009;&#0009;dialog.show()&#000a;&#0009;&#0009;timeLeft=dialog_time&#000a;&#0009;&#0009;showing_dialog=true&#000a;&#0009;&#0009;dialog_iterator+=1&#000a;&#0009;&#0009;&#000a;func get_response(x):&#000a;&#0009;if (x==1):&#000a;&#0009;&#0009;return PLAYER_RESPONSE&#000a;&#0009;if (x==0):&#000a;&#0009;&#0009;return PLAYER_RESPONSE_SHORT" </string>
 
 	</resource>
 	<main_resource>
@@ -51,10 +20,8 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="40">
-				<string> "Mooninite" </string>
-				<string> "transform/pos" </string>
-				<string> "transform/scale" </string>
+			<string_array  len="51">
+				<string> "KinematicBody2D" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
@@ -66,32 +33,45 @@
 				<string> "MOTION_SPEED" </string>
 				<string> "DIRECTION" </string>
 				<string> "SCALE" </string>
-				<string> "HEALTH" </string>
-				<string> "FRIEND" </string>
-				<string> "CAN_SHOOT" </string>
-				<string> "KinematicBody2D" </string>
-				<string> "CollisionShape2D" </string>
-				<string> "shape" </string>
-				<string> "trigger" </string>
-				<string> "_update_shape_index" </string>
+				<string> "WORDS" </string>
+				<string> "WORDS1" </string>
+				<string> "PLAYER_RESPONSE" </string>
+				<string> "PLAYER_RESPONSE_SHORT" </string>
+				<string> "ACTIVE" </string>
+				<string> "dialog_time" </string>
+				<string> "GROUP" </string>
+				<string> "HAS_KEY" </string>
 				<string> "RayCast2D" </string>
 				<string> "enabled" </string>
 				<string> "cast_to" </string>
 				<string> "layer_mask" </string>
 				<string> "type_mask" </string>
-				<string> "AnimatedSprite" </string>
-				<string> "frames" </string>
-				<string> "animation" </string>
-				<string> "sounds" </string>
-				<string> "params/volume_db" </string>
-				<string> "params/pitch_scale" </string>
-				<string> "params/attenuation/min_distance" </string>
-				<string> "params/attenuation/max_distance" </string>
-				<string> "params/attenuation/distance_exp" </string>
-				<string> "config/polyphony" </string>
-				<string> "config/samples" </string>
-				<string> "config/pitch_random" </string>
-				<string> "SamplePlayer2D" </string>
+				<string> "Sprite" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/scale" </string>
+				<string> "texture" </string>
+				<string> "CollisionShape2D" </string>
+				<string> "shape" </string>
+				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
+				<string> "Dialog" </string>
+				<string> "visibility/visible" </string>
+				<string> "rect/scale" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "align" </string>
+				<string> "valign" </string>
+				<string> "autowrap" </string>
+				<string> "percent_visible" </string>
+				<string> "lines_skipped" </string>
+				<string> "max_lines_visible" </string>
+				<string> "Label" </string>
 			</string_array>
 			<string> "node_count" </string>
 			<int> 5 </int>
@@ -99,34 +79,62 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="111"> 				-1, -1, 17, 0, -1, 16, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 2, 7, 5, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 8, 15, 2, 16, 2, 0, 0, 0, 18, 18, -1, 5, 1, 11, 2, 12, 19, 3, 20, 2, 21, 13, 0, 0, 0, 22, 22, -1, 4, 23, 2, 24, 14, 25, 5, 26, 15, 0, 0, 0, 27, 27, -1, 5, 1, 16, 2, 17, 28, 18, 29, 19, 10, 20, 0, 0, 0, 39, 30, -1, 8, 31, 21, 32, 22, 33, 22, 34, 23, 35, 22, 36, 5, 37, 24, 38, 21, 0 </int_array>
+			<int_array  len="129"> 				-1, -1, 0, 0, -1, 19, 1, 0, 2, 1, 3, 2, 4, 0, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 11, 15, 12, 16, 0, 17, 13, 18, 14, 19, 0, 0, 0, 0, 20, 20, -1, 4, 21, 0, 22, 15, 23, 3, 24, 16, 0, 0, 0, 25, 25, -1, 3, 26, 17, 27, 18, 28, 19, 0, 0, 0, 29, 29, -1, 5, 26, 20, 27, 21, 30, 1, 31, 0, 32, 6, 0, 0, 0, 50, 33, -1, 16, 34, 0, 35, 22, 36, 23, 37, 23, 38, 24, 39, 6, 40, 25, 41, 26, 42, 27, 43, 28, 44, 3, 45, 24, 46, 23, 47, 29, 48, 6, 49, 30, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="25" shared="false">
-				<vector2> 0, 16 </vector2>
-				<vector2> 0.125, 0.125 </vector2>
+			<array  len="31" shared="false">
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://3">  </resource>
-				<matrix32> 2.87694, -0, 0, 7.54856, 1.65016, 20.0023 </matrix32>
+				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<matrix32> 1.23005, -0, 0, 1.05669, 0.147157, 0.429978 </matrix32>
 				<int> 1 </int>
 				<real> 0.08 </real>
-				<resource  external="0">  </resource>
-				<int> 100 </int>
-				<string> "down" </string>
-				<vector2> 1, 1 </vector2>
-				<vector2> 1.65016, 20.0023 </vector2>
-				<vector2> 2.87694, 7.54856 </vector2>
+				<resource  resource_type="Script" path="local://2">  </resource>
 				<int> 0 </int>
+				<string> "left" </string>
+				<vector2> 1, 1 </vector2>
+				<array  len="1" shared="false">
+					<string> "My nutrients! Retrieve them at once, they have escaped!" </string>
+				</array>
+				<array  len="8" shared="false">
+					<string> "if you want to achieve in this life, you must set your goals higher." </string>
+					<string> " " </string>
+					<string> "The needs of the many outweigh the needs of the one. And if you think I got that from Star Trek, you are very wrong, mister. " </string>
+					<string> " " </string>
+					<string> "First we must train you. You can&apos;t go into battle like that. Do you want it done fast, Err, or do you want it done right? " </string>
+					<string> " " </string>
+					<string> "Now clutch the dark purple hairs of the galloping orangutan of normalcy and ride! ride!" </string>
+					<string> "Huh, impressive. You have a fresh approach to being normal" </string>
+				</array>
+				<array  len="7" shared="false">
+					<string> " " </string>
+					<string> "That&apos;s it! I give up! I sacrificed everything - even your lives - for you people, and what do I get?!" </string>
+					<string> " " </string>
+					<string> "I&apos;ll just fit in. Take on a normal life! Meet a nice job; hold down a well paying family!" </string>
+					<string> " " </string>
+					<string> "I just want it done! done! done!" </string>
+					<string> " " </string>
+				</array>
+				<array  len="2" shared="false">
+					<string> " " </string>
+					<string> "I alone stride along to strive alone to unify all men in the greasy heat of my unifrier. " </string>
+				</array>
+				<real> 3.5 </real>
+				<string> "mooninites" </string>
 				<vector2> 0, 50 </vector2>
 				<int> 15 </int>
-				<vector2> -1.10749, -2.79646 </vector2>
-				<vector2> 5.60783, 5.65546 </vector2>
-				<resource  resource_type="SpriteFrames" path="local://2">  </resource>
-				<string> "default" </string>
-				<resource  external="3">  </resource>
-				<real> 0 </real>
+				<vector2> -0.214645, -0.214642 </vector2>
+				<vector2> 0.125, 0.125 </vector2>
+				<resource  external="0">  </resource>
+				<vector2> 0.147157, 0.429978 </vector2>
+				<vector2> 1.23005, 1.05669 </vector2>
+				<vector2> 0.67, 0.67 </vector2>
+				<bool> True </bool>
+				<int> 2 </int>
+				<real> -82 </real>
+				<real> -105 </real>
+				<real> 163 </real>
+				<real> 35 </real>
 				<real> 1 </real>
-				<real> 2048 </real>
-				<resource  resource_type="SampleLibrary" path="local://4">  </resource>
+				<int> -1 </int>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>

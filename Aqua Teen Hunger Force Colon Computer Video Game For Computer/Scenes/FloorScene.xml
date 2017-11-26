@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="2" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+<resource_file type="PackedScene" subresource_count="5" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://Sprites/grass.png" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://Sprites/Shadow.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Sprites/blue_floor.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Sprites/red_floor.png" type="Texture" index="3"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
@@ -11,24 +14,33 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="5">
+			<string_array  len="8">
 				<string> "Node2D" </string>
-				<string> "Floor" </string>
+				<string> "Floor_green" </string>
 				<string> "transform/pos" </string>
 				<string> "texture" </string>
 				<string> "Sprite" </string>
+				<string> "Floor_black" </string>
+				<string> "Floor_blue" </string>
+				<string> "Floor_red" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 2 </int>
+			<int> 5 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="18"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 4, 1, -1, 2, 2, 0, 3, 1, 0 </int_array>
+			<int_array  len="51"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 4, 1, -1, 2, 2, 0, 3, 1, 0, 0, 0, 4, 5, -1, 2, 2, 2, 3, 3, 0, 0, 0, 4, 6, -1, 2, 2, 4, 3, 5, 0, 0, 0, 4, 7, -1, 2, 2, 6, 3, 7, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="2" shared="false">
+			<array  len="8" shared="false">
 				<vector2> 48, 16 </vector2>
 				<resource  external="0">  </resource>
+				<vector2> 112, 16 </vector2>
+				<resource  external="1">  </resource>
+				<vector2> 176, 16 </vector2>
+				<resource  external="2">  </resource>
+				<vector2> 240, 16 </vector2>
+				<resource  external="3">  </resource>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>

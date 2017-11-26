@@ -37,7 +37,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="29">
+			<string_array  len="48">
 				<string> "KinematicBody2D" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
@@ -50,11 +50,16 @@
 				<string> "MOTION_SPEED" </string>
 				<string> "DIRECTION" </string>
 				<string> "SCALE" </string>
-				<string> "HEALTH" </string>
-				<string> "FRIEND" </string>
-				<string> "CAN_SHOOT" </string>
-				<string> "CollisionShape2D" </string>
+				<string> "WORDS" </string>
+				<string> "ACTIVE" </string>
+				<string> "dialog_time" </string>
+				<string> "RayCast2D" </string>
 				<string> "transform/pos" </string>
+				<string> "enabled" </string>
+				<string> "cast_to" </string>
+				<string> "layer_mask" </string>
+				<string> "type_mask" </string>
+				<string> "CollisionShape2D" </string>
 				<string> "transform/scale" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
@@ -62,39 +67,72 @@
 				<string> "AnimatedSprite" </string>
 				<string> "frames" </string>
 				<string> "animation" </string>
-				<string> "RayCast2D" </string>
-				<string> "enabled" </string>
-				<string> "cast_to" </string>
-				<string> "layer_mask" </string>
-				<string> "type_mask" </string>
+				<string> "Dialog" </string>
+				<string> "visibility/visible" </string>
+				<string> "rect/scale" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "text" </string>
+				<string> "align" </string>
+				<string> "valign" </string>
+				<string> "autowrap" </string>
+				<string> "percent_visible" </string>
+				<string> "lines_skipped" </string>
+				<string> "max_lines_visible" </string>
+				<string> "Label" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 5 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="82"> 				-1, -1, 0, 0, -1, 14, 1, 0, 2, 1, 3, 2, 4, 0, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 6, 13, 0, 14, 0, 0, 0, 0, 15, 15, -1, 5, 16, 9, 17, 10, 18, 1, 19, 0, 20, 11, 0, 0, 0, 21, 21, -1, 4, 16, 12, 22, 13, 23, 14, 8, 15, 0, 0, 0, 24, 24, -1, 4, 25, 0, 26, 16, 27, 3, 28, 17, 0 </int_array>
+			<int_array  len="125"> 				-1, -1, 0, 0, -1, 14, 1, 0, 2, 1, 3, 2, 4, 0, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 0, 14, 10, 0, 0, 0, 15, 15, -1, 5, 16, 11, 17, 0, 18, 12, 19, 3, 20, 13, 0, 0, 0, 21, 21, -1, 5, 16, 14, 22, 15, 23, 1, 24, 0, 25, 6, 0, 0, 0, 26, 26, -1, 4, 16, 16, 27, 17, 28, 18, 8, 19, 0, 0, 0, 47, 29, -1, 17, 30, 0, 31, 20, 32, 21, 33, 21, 34, 6, 35, 6, 36, 22, 37, 23, 38, 24, 39, 25, 40, 26, 41, 3, 42, 27, 43, 21, 44, 28, 45, 6, 46, 29, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="18" shared="false">
+			<array  len="30" shared="false">
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://2">  </resource>
-				<matrix32> 1.47257, -0, 0, 1.51291, 4.45626, -0.514574 </matrix32>
+				<matrix32> 1.43725, -0, 0, 1.78499, -0.0242995, 32.0025 </matrix32>
 				<int> 1 </int>
 				<real> 0.08 </real>
 				<resource  external="0">  </resource>
-				<int> 100 </int>
+				<int> 0 </int>
 				<string> "left" </string>
 				<vector2> 1, 1 </vector2>
-				<vector2> 4.45626, -0.514574 </vector2>
-				<vector2> 1.47257, 1.51291 </vector2>
-				<int> 0 </int>
-				<vector2> 5.59441, -11.3636 </vector2>
+				<array  len="6" shared="false">
+					<string> "Every luxury has a deep price. Every indulgence, a cosmic cost." </string>
+					<string> "Each fiber of pleasure you experience causes equivalent pain somewhere else." </string>
+					<string> "This is the first law of emodynamics. Joy can be neither created nor destroyed. The balance of happiness is constant." </string>
+					<string> "Fact: Every time you eat a bite of cake, someone gets horsewhipped. Facter: Every time two people kiss, an orphanage collapses." </string>
+					<string> "Factest: Every time a baby is born, an innocent animal is severely mocked for its physical appearance." </string>
+					<string> "Don&apos;t be a pleasure hog. Your every smile is a dagger. Happiness is murder. Vote &apos;yes&apos; on Proposition 1321." </string>
+				</array>
+				<int> 4 </int>
+				<vector2> -0.235046, 28.9566 </vector2>
+				<vector2> 0, 50 </vector2>
+				<int> 15 </int>
+				<vector2> -0.0242995, 32.0025 </vector2>
+				<vector2> 1.43725, 1.78499 </vector2>
+				<vector2> 0.338581, 25.5483 </vector2>
 				<resource  resource_type="SpriteFrames" path="local://1">  </resource>
 				<string> "default" </string>
 				<resource  external="3">  </resource>
-				<vector2> 0, 50 </vector2>
-				<int> 15 </int>
+				<vector2> 0.67, 0.67 </vector2>
+				<bool> True </bool>
+				<real> -128 </real>
+				<real> -131 </real>
+				<real> 254 </real>
+				<real> 65 </real>
+				<string> "test" </string>
+				<int> 2 </int>
+				<real> 1 </real>
+				<int> -1 </int>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>
